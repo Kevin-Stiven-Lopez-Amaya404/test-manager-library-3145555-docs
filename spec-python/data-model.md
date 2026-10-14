@@ -67,7 +67,7 @@ Ninguna columna lleva `DEFAULT`: los valores los pone el dominio.
 | `id` | `uuid` | no | PK |
 | `title` | `varchar(250)` | no | Recortado por el dominio |
 | `author` | `varchar(200)` | no | |
-| `isbn` | `char(13)` | no | Solo dígitos. Único entre libros activos (índice parcial) |
+| `isbn` | `char(13)` | no | Solo dígitos. Inmutable después de crear el libro. Único entre libros activos (índice parcial) |
 | `category_id` | `uuid` | no | FK restrictiva a `category` |
 | `total_copies` | `integer` | no | ≥ 1 |
 | `available_copies` | `integer` | no | Entre 0 y `total_copies` |

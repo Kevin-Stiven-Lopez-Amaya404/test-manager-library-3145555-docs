@@ -119,6 +119,7 @@ Libro (respuesta):
 ```
 
 `POST /books` (petición): `title`, `author`, `isbn`, `category_id`, `total_copies`. Los disponibles los calcula el servidor.
+`PUT /books/{id}` (petición): `title`, `author`, `category_id`, `total_copies`; todos son obligatorios. El `isbn` no forma parte de la actualización y conserva su valor original. Los disponibles los ajusta el servidor según la diferencia del total.
 `cover_key` es una clave opaca: para pintar la portada se usa `GET /books/{id}/cover`, que devuelve el binario o 404.
 
 ### 3.5 Socios
