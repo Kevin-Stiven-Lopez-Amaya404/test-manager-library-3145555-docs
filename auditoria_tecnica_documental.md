@@ -383,7 +383,7 @@ Siguen pendientes de decisión humana DOC-001, DOC-003, DOC-005 y DOC-006.
 
 **Pregunta pendiente:** ¿qué campo o condición garantiza el control optimista?
 
-### DOC-002 — `GET /books/{id}/cover` no aparece en la tabla de endpoints
+### DOC-002 — `GET /books/{id}/cover` no aparece en la tabla de endpoints — RESUELTO
 
 **Clasificación:** confirmado.
 
@@ -428,7 +428,7 @@ Siguen pendientes de decisión humana DOC-001, DOC-003, DOC-005 y DOC-006.
 
 **Responsable sugerido:** responsable funcional y responsable de API.
 
-### DOC-004 — Precedencia entre `/loans/overdue` y `/loans/{id}`
+### DOC-004 — Precedencia entre `/loans/overdue` y `/loans/{id}` — RESUELTO
 
 **Clasificación:** riesgo probable.
 
