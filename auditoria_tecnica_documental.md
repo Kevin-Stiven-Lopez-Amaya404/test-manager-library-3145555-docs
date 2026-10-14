@@ -30,11 +30,11 @@ Se inspeccionaron los seis repositorios locales:
 | Repositorio | Propósito documentado | Estado observado |
 |---|---|---|
 | [docs](./) | Especificación y documentación normativa | Contiene `spec-python`, `spec-.net` y README |
-| [api](./test-manager-library-3145555-api) | Backend Laravel | Solo README; vacío intencionalmente |
-| [app](./test-manager-library-3145555-app) | Frontend React | Solo README; vacío intencionalmente |
-| [page](./test-manager-library-3145555-page) | Sitio público estático | Solo README; vacío intencionalmente |
-| [infra](./test-manager-library-3145555-infra) | Contenedores, red, volumen y PostgreSQL | Solo README; vacío intencionalmente |
-| [tool](./test-manager-library-3145555-tool) | Sembrador de datos por API | Solo README; vacío intencionalmente |
+| `api` | Backend Laravel | No está presente en este checkout |
+| `app` | Frontend React | No está presente en este checkout |
+| `page` | Sitio público estático | No está presente en este checkout |
+| `infra` | Contenedores, red, volumen y PostgreSQL | No está presente en este checkout |
+| `tool` | Sembrador de datos por API | No está presente en este checkout |
 
 Los README confirman que los repositorios de implementación comienzan vacíos. Por tanto, la ausencia de código no se registra como defecto de los repositorios.
 
@@ -365,8 +365,8 @@ Siguen pendientes de decisión humana DOC-001, DOC-003, DOC-005 y DOC-006.
 
 **Evidencia:**
 
-- [ADR-002](./spec-.net/adr/adr-002-concurrencia-optimista.md:6) indica que el libro lleva un testigo de versión.
-- [data-model.md](./spec-.net/data-model.md:63) enumera las columnas de `book` y no incluye `version`, `row_version` ni un campo equivalente.
+- [ADR-002](./spec-.net/adr/adr-002-concurrencia-optimista.md) indica que el libro lleva un testigo de versión (línea 6).
+- [data-model.md](./spec-.net/data-model.md) enumera las columnas de `book` y no incluye `version`, `row_version` ni un campo equivalente (línea 63).
 - La consulta de verificación del modelo tampoco define cómo comprobar dicho testigo.
 
 **Comportamiento esperado:** la estrategia de concurrencia debe tener una representación explícita y verificable en el modelo, en la persistencia o en una regla atómica documentada.
@@ -391,8 +391,8 @@ Siguen pendientes de decisión humana DOC-001, DOC-003, DOC-005 y DOC-006.
 
 **Evidencia:**
 
-- [api-contract.md](./spec-.net/api-contract.md:107) lista `PUT` y `DELETE` para la portada.
-- [api-contract.md](./spec-.net/api-contract.md:121) menciona `GET /books/{id}/cover` como ruta necesaria para mostrar la portada.
+- [api-contract.md](./spec-.net/api-contract.md) lista `PUT` y `DELETE` para la portada (línea 107).
+- [api-contract.md](./spec-.net/api-contract.md) menciona `GET /books/{id}/cover` como ruta necesaria para mostrar la portada (línea 121).
 
 **Comportamiento esperado:** toda ruta consumida por el frontend debe estar en el inventario formal del contrato.
 
@@ -412,9 +412,9 @@ Siguen pendientes de decisión humana DOC-001, DOC-003, DOC-005 y DOC-006.
 
 **Evidencia:**
 
-- [spec.md](./spec-.net/spec.md:43) exige ISBN al crear un libro.
-- [spec.md](./spec-.net/spec.md:44) exige 13 dígitos y unicidad entre activos.
-- [api-contract.md](./spec-.net/api-contract.md:105) describe `PUT /books/{id}` con título, autor, categoría y total, pero no ISBN.
+- [spec.md](./spec-.net/spec.md) exige ISBN al crear un libro (línea 43).
+- [spec.md](./spec-.net/spec.md) exige 13 dígitos y unicidad entre activos (línea 44).
+- [api-contract.md](./spec-.net/api-contract.md) describe `PUT /books/{id}` con título, autor, categoría y total, pero no ISBN (línea 105).
 
 **Interpretaciones posibles:**
 
@@ -436,8 +436,8 @@ Siguen pendientes de decisión humana DOC-001, DOC-003, DOC-005 y DOC-006.
 
 **Evidencia:**
 
-- [api-contract.md](./spec-.net/api-contract.md:137) define `GET /loans/{id}`.
-- [api-contract.md](./spec-.net/api-contract.md:139) define `GET /loans/overdue`.
+- [api-contract.md](./spec-.net/api-contract.md) define `GET /loans/{id}` (línea 137).
+- [api-contract.md](./spec-.net/api-contract.md) define `GET /loans/overdue` (línea 139).
 
 **Riesgo:** algunos sistemas de routing pueden interpretar `overdue` como `{id}` si la ruta parametrizada tiene precedencia.
 
@@ -451,7 +451,7 @@ Siguen pendientes de decisión humana DOC-001, DOC-003, DOC-005 y DOC-006.
 
 **Prioridad:** P3.
 
-**Evidencia:** la ruta `GET /books/{id}/cover` se menciona en [api-contract.md](./spec-.net/api-contract.md:121), pero no tiene una fila propia con rol.
+**Evidencia original:** antes de la corrección, la ruta `GET /books/{id}/cover` se mencionaba en [api-contract.md](./spec-.net/api-contract.md), pero no tenía una fila propia con rol (línea 121).
 
 **Interpretaciones posibles:**
 
@@ -469,7 +469,7 @@ La regla general de autenticación sugiere la primera opción, pero la ruta debe
 
 **Prioridad:** P3.
 
-**Evidencia:** el verbo `PUT` normalmente comunica reemplazo, mientras que el contrato solo enumera algunos campos en [api-contract.md](./spec-.net/api-contract.md:105) y no muestra un cuerpo de petición completo.
+**Evidencia:** el verbo `PUT` normalmente comunica reemplazo, mientras que el contrato solo enumera algunos campos en [api-contract.md](./spec-.net/api-contract.md) y no muestra un cuerpo de petición completo (línea 105).
 
 **Riesgo:** el frontend y el backend pueden interpretar la operación como reemplazo total o actualización parcial.
 
