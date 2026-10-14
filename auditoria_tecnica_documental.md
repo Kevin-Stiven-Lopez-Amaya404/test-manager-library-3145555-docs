@@ -344,6 +344,17 @@ La política protege el historial y evita que se eliminen entidades referenciada
 
 ## 10. Hallazgos detallados
 
+### 10.0 Estado de correcciones documentales
+
+Durante la ejecución incremental de esta auditoría se corrigieron dos inconsistencias documentales inequívocas en ambas variantes del contrato:
+
+- **DOC-002:** `GET /books/{id}/cover` ahora aparece en la tabla formal de endpoints.
+- **DOC-004:** el contrato ahora establece que `/loans/overdue` debe resolverse antes que `/loans/{id}`.
+
+Estas correcciones no agregan funcionalidades nuevas ni cambian permisos de negocio; hacen explícitas reglas que ya estaban implícitas en el contrato.
+
+Siguen pendientes de decisión humana DOC-001, DOC-003, DOC-005 y DOC-006.
+
 ### DOC-001 — Testigo de versión no definido en el modelo físico
 
 **Clasificación:** confirmado.
